@@ -56,7 +56,7 @@ static void notifyNotifyCallback(BLERemoteCharacteristic* pBLERemoteCharacterist
 
 class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
   void onResult(BLEAdvertisedDevice advertisedDevice) {
-    Serial.print("BLE: something found... ");
+    Serial.print("BLE: something found: ");
     Serial.println(advertisedDevice.getName().c_str());
     if (advertisedDevice.getName() == bleServerName) { //Check if the name of the advertiser matches
       advertisedDevice.getScan()->stop(); //Scan can be stopped, we found what we are looking for
